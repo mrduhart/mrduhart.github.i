@@ -6,7 +6,7 @@ permalink: /I-Data/about
 
 # Enter I, Data (Oh, great. Another Data Science blog...)
 
-{#
+{% comment %}
 1. Fun
 2. Trust
 3. Respect
@@ -16,7 +16,7 @@ permalink: /I-Data/about
 2. Be sincere.
 3. Tell who you are.
 4. Tell what you offer.
-#}
+{% endcomment %}
 
 I know. We already have lots of data science blogs out there. Some are good (examples), while some are not thaaat good (examples). Some focus on the theory (e.g.) and others in the programming (e.g.). We have
 
