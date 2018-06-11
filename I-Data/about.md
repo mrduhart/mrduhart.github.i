@@ -1,7 +1,7 @@
 ---
 layout: default
 title: About
-permalink: about
+permalink: /I-Data/about
 ---
 
 # Enter I, Data (Oh, great. Another Data Science blog...)
