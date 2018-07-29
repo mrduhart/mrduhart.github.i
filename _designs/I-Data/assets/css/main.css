@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: "Inconsolata", sans-serif;
+  font-size: 16pt;
+}
+
+.page-header {
+  background: #101010;
+  padding: 1.5em;
+}
+
+.page-body {
+  text-align: center;
+  background: #f0f0f0;
+}
+
+.page-footer {
+  background: #404040;
+  padding: 2.5em;
+}
+
+.note {
+  display: flex;
+  flex-flow: row wrap;
+  text-align: center;
+}
+
+.note > * {
+  flex: 1 100%;
+}
+
+.note-header {
+  background: #b30027;
+  padding: 1.5em 1em;
+}
+
+.note-aside {
+  padding: 1em;
+  color: #fff;
+}
+
+.note-nav {
+  background: #008059;
+}
+
+.note-body {
+  text-align: left;
+  margin: 0.67em 0;
+  padding: 1em;
+}
+
+.note-tags {
+  background: #f45d0c;
+}
+
+.note-prev {
+  background: #e20b39;
+}
+
+.note-next {
+  background: #e20b00;
+}
+
+h1 {
+  font-size: 2.5em;
+  font-weight: bold;
+  line-height: 1.15;
+  color: #fff;
+  margin: 0.5em 0;
+}
+
+.note-date {
+  font-size: 1.15em;
+  line-height: 1.15;
+  color: #dddddd;
+  margin: 0.5em 0;
+}
+
+.page-body p {
+  margin: 0.67em 0;
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 639px) {
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 640px) {
+  .note-aside { flex: 1 auto; }
+  .note-nav, .note-tags { flex: 4 0 100%; }
+
+  .page-body {
+    background-color: #F5CF8E;
+  }
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 800px) {
+  .note-body { flex: 4 0 75%; }
+  .note-nav, .note-tags { flex: 4 0 12.5%; }
+
+  .note-header {order: 1;}
+  .note-nav {order: 2;}
+  .note-body {order: 3;}
+  .note-tags {order: 4;}
+  .note-prev {order: 5;}
+  .note-next {order: 6;}
+
+  .page-body {
+    background-color: #B2D6FF;
+  }
+}
