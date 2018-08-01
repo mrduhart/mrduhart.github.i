@@ -10,9 +10,67 @@ html, body {
   font-size: 16pt;
 }
 
+#page-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
 .page-header {
   background: #101010;
   padding: 1.5em;
+  color: #fff;
+  text-align: center;
+}
+
+.logo {
+  font-size: 1.5em;
+  transition: 0.6s ease-out all;
+}
+
+.page-nav {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: start;
+  background: #101010;
+
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 100%;
+  width: 100%;
+
+  transition: 0.3s ease-out all;
+}
+
+.page-nav.open {
+  transform: translate3d(-100%, 0, 0);
+}
+
+#open-nav {
+  color: #f2f2f2;
+  position: absolute;
+  right: 0;
+  font-size: 1.5em;
+  padding: 0 1.5em;
+}
+
+.page-nav a {
+  width: 100%;
+  font-size: 2em;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 1.2em;
+  text-decoration: none;
+
+  transform: translate3d(50%, 0, 0);
+  transition: 0.6s ease all;
+}
+
+.page-nav.open a {
+  transform: translate3d(0, 0, 0);
 }
 
 .page-body {
@@ -92,8 +150,8 @@ h1 {
 
 /* Tablet Styles */
 @media only screen and (min-width: 640px) {
-  .note-aside { flex: 1 auto; }
-  .note-nav, .note-tags { flex: 4 0 100%; }
+  /* .note-aside { flex: 1 auto; }
+  .note-nav, .note-tags { flex: 100%; } */
 
   .page-body {
     background-color: #F5CF8E;
@@ -102,17 +160,78 @@ h1 {
 
 /* Desktop Styles */
 @media only screen and (min-width: 800px) {
-  .note-body { flex: 4 0 75%; }
-  .note-nav, .note-tags { flex: 4 0 12.5%; }
+  /* .note-body { flex: 75%; }
+  .note-nav, .note-tags { flex: 12.5%; }
 
   .note-header {order: 1;}
   .note-nav {order: 2;}
   .note-body {order: 3;}
   .note-tags {order: 4;}
   .note-prev {order: 5;}
-  .note-next {order: 6;}
+  .note-next {order: 6;} */
+
+
+  /* Style the links inside the navigation bar */
+  /* .page-nav a {
+    flex: 0;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  } */
+
+  /* Change the color of links on hover */
+  /* .page-nav a:hover {
+    border-bottom: 1pt solid #fff;
+  } */
+
+  /* Hide the link that should open and close the page-nav on small screens */
+  /* .page-nav .icon {
+    display: none;
+  } */
 
   .page-body {
     background-color: #B2D6FF;
+  }
+
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .logo, .page-nav a {
+    padding: 0.2em 1.2em;
+  }
+
+  .page-nav {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+
+    position: initial;
+    width: auto;
+
+    transition: 0.2s ease-out all;
+  }
+
+  .page-nav.open {
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  #open-nav, #close-nav {
+    display: none;
+  }
+
+  .page-nav a {
+    width: initial;
+    font-size: 1.5em;
+    color: #f2f2f2;
+    text-align: center;
+    transform: translate3d(0, 0, 0);
+    transition: 0.6s ease-out font-size;
+  }
+
+  .page-nav a:hover {
+    border-bottom: 1pt solid #fff;
   }
 }
