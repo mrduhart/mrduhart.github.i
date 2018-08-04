@@ -1,1 +1,9 @@
+# File types
+*.docx
+*.pdf
+*.png
+*.zip
+
+# Folders
 _site/
+My_Fontspring_Fonts/
