@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>{{ page.title }}</title>
+  <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand:300,400">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Quicksand', sans-serif;
+      font-size: 16pt;
+    }
+    #page-wrapper {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: #f2f2f2 url(assets/imgs/desk.jpg) no-repeat center;
+      background-size: cover;
+      height: 100%;
+      width: 100%;
+    }
+    header {
+      width: 100%;
+      text-align: center;
+      position: relative;
+      top: 50%;
+      padding: 1em;
+      color: #101010;
+    }
+    h1 {
+      font-size: 3em;
+      font-weight: 300;
+    }
+    .social {
+      display: flex;
+      justify-content: center;
+    }
+    .social-item {
+      color: #101010;
+      font-size: 2em;
+      line-height: 2em;
+      width: 1.5em;
+      height: 2em;
+      text-align: center;
+    }
+    @media only screen and (min-width: 640px) {
+      header {
+        top: 60%;
+      }
+      h1 {
+        font-size: 4em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="page-wrapper">
+    <header>
+      <h1>COMING SOON</h1>
+      <div class="social">
+        <a class="social-item" target="_blank" href="https://www.linkedin.com/in/bronson-duhart"><i class="fab fa-linkedin"></i></a>
+        <a class="social-item" target="_blank" href="https://stackoverflow.com/u/4281529"><i class="fab   fa-stack-overflow"></i></a>
+        <a class="social-item" target="_blank" href="https://github.com/mrduhart/"><i class="fab   fa-github"></i></a>
+      </div>
+    </header>
+  </div>
+</body>
+
+</html>
