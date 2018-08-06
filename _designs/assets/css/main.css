@@ -11,6 +11,11 @@ html, body {
   color: #101010;
 }
 
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
 #page-wrapper {
   position: relative;
   overflow: hidden;
@@ -46,7 +51,6 @@ html, body {
 .page-header a {
   display: inline-block;
   color: #f2f2f2;
-  text-decoration: none;
 }
 
 #nav-logo {
@@ -87,6 +91,10 @@ html, body {
   left: 0;
 }
 
+#page-down {
+  display: none;
+}
+
 .page-nav a {
   width: 100%;
   padding: 1em;
@@ -103,10 +111,11 @@ html, body {
 .page-body {
   text-align: center;
   background: #f8f8f8;
+  margin-top: 100px;
 }
 
 .page-body p {
-  /* margin: 0.67em 0; */
+  margin: 0.67em 0;
   padding: 0 1em;
 }
 
@@ -115,88 +124,24 @@ html, body {
   padding: 2.5em;
 }
 
-.note {
-  display: flex;
-  flex-flow: row wrap;
-  width: 100%;
-}
-
-.note > * {
-  flex: 1 100%;
-}
-
-.note-header, .note-body, .note-footer {
-  width: 100%;
-}
-
-.note-header, .note-body {
-  padding: 1.6em 0 1em;
-  max-width: 740px;
-  margin: auto;
-}
-
-.note-header {
-  /* background: #b30027; */
-  margin-top: 100px;
-}
-
-.note-title {
-  margin: 0 0;
-}
-
-.note-meta {
-  font-size: 1.15em;
-  line-height: 1;
-  /* color: #dddddd; */
-  margin: 0.5em 0;
-}
-
-.note-img {
-  width: 100%;
-  max-width: 600px;
-  margin: 0.67em 0;
-  border: 1px solid #000;
-}
-
-.note-intro {
-  margin: 0.5em 0;
-  text-align: justify;
-}
-
-.note-aside {
-  padding: 1em;
-  color: #fff;
-}
-
-.note-nav {
-  background: #008059;
-}
-
-.note-body p {
-  margin: 0 0 0.8em;
+.home-intro, .home-contents {
+  background: #b30027;
+  color: #ffffff;
+  font-size: 1.18em;
+  line-height: 1.35;
+  padding: 1.5em;
   text-align: left;
-  line-height: 1.3;
 }
 
-.note-tags {
-  background: #f45d0c;
+.home-intro p, .home-contents p {
+  width: 100%;
+  max-width: 840px;
+  margin: 0.8em auto;
 }
 
-.note-prev {
-  background: #e20b39;
-}
-
-.note-next {
-  background: #e20b00;
-}
-
-h1.note-title {
-  font-size: 2.5em;
-  font-weight: bold;
-  line-height: 1;
-  padding: 0 0.4em;
-  /* color: #fff; */
-  /* margin: 0.5em 0; */
+.home-img img {
+  display: block;
+  width: 100%;
 }
 
 /* Mobile Styles */
@@ -205,49 +150,19 @@ h1.note-title {
 
 /* Tablet Styles */
 @media only screen and (min-width: 640px) {
-  /* .note-aside { flex: 1 auto; }
-  .note-nav, .note-tags { flex: 100%; } */
 }
 
 /* Desktop Styles */
 @media only screen and (min-width: 800px) {
-  /* .note-body { flex: 75%; }
-  .note-nav, .note-tags { flex: 12.5%; }
-
-  .note-header {order: 1;}
-  .note-nav {order: 2;}
-  .note-body {order: 3;}
-  .note-tags {order: 4;}
-  .note-prev {order: 5;}
-  .note-next {order: 6;} */
-
-
-  /* Style the links inside the navigation bar */
-  /* .page-nav a {
-    flex: 0;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  } */
-
-  /* Change the color of links on hover */
-  /* .page-nav a:hover {
-    border-bottom: 1pt solid #fff;
-  } */
-
-  /* Hide the link that should open and close the page-nav on small screens */
-  /* .page-nav .icon {
-    display: none;
-  } */
-
   .page-header {
-    display: flex;
-    justify-content: space-between;
+    position: absolute;
 
-    height: 80px;
-    padding: 0 1.04em;
-    font-size: 1.18em;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+
+    height: 100vh;
+    font-size: 1.28em;
     line-height: 1;
   }
 
@@ -256,8 +171,9 @@ h1.note-title {
   }
 
   #nav-logo {
-    padding: 0.75em 0;
-    font-size: 1.23em;
+    width: 100%;
+    padding: 0.5em;
+    font-size: 3.55em;
   }
 
   .page-nav {
@@ -266,15 +182,33 @@ h1.note-title {
     justify-content: center;
 
     position: initial;
-    width: auto;
+    width: 100%;
   }
 
   .page-nav.open {
-    transform: translate3d(-100%, 0, 0);
+    /* transform: translate3d(-100%, 0, 0); */
   }
 
   #open-nav, #close-nav {
     display: none;
+  }
+
+  @keyframes up-down {
+    from {bottom: 0.4em;}
+    to {bottom: 0;}
+  }
+
+  #page-down {
+    width: 100%;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    padding: 0.5em;
+
+    font-size: 1.5em;
+    color: #f2f2f2;
+
+    animation: up-down 0.6s infinite alternate;
   }
 
   .page-nav a {
@@ -286,7 +220,7 @@ h1.note-title {
     transform: translate3d(0, 0, 0);
   }
 
-  .note-header {
-    margin-top: 80px;
+  .page-body {
+    margin-top: 100vh;
   }
 }

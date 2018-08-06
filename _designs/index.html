@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>I, Data</title>
+
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+</head>
+
+<body>
+  <div id="page-wrapper">
+    <header id="page-header" class="page-header">
+      <a id="open-nav">
+        <i class="fa fa-bars"></i>
+      </a>
+
+      <a id="nav-logo" href="index.html"><i class="logo">I, Data</i></a>
+
+      <nav id="page-nav" class="page-nav">
+        <a id="close-nav">
+          <i class="fa fa-times"></i>
+        </a>
+        <a href="index.html">Home</a>
+        <a href="#">Notes</a>
+        <a href="about.html">About</a>
+      </nav>
+
+      <span id="page-down" class="page-down"><i class="fas fa-angle-down"></i></span>
+    </header>
+
+    <main id="page-body" class="page-body">
+      <div class="home-intro">
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+      </div>
+
+      <div class="home-img">
+        <img src="assets/imgs/math_map.png"></img>
+      </div>
+
+      <div class="home-contents">
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+      </div>
+    </main>
+    <footer class="page-footer"></footer>
+  </div>
+  <script>
+    // Responsive menu
+    document.getElementById("open-nav").onclick = function(){
+      document.getElementById("page-nav").classList.add("open");
+    };
+
+    document.getElementById("close-nav").onclick = function(){
+      document.getElementById("page-nav").classList.remove("open");
+    };
+
+    // When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar
+    var pageHeader = document.getElementById("page-header");
+    var noteHeader = document.getElementById("note-header");
+    // var threshold =
+    //   0.9 * (noteHeader.getBoundingClientRect().bottom
+    //           - pageHeader.getBoundingClientRect().bottom);
+    var threshold = 1.0 * pageHeader.offsetHeight;
+    var prevScroll = window.pageYOffset;
+
+    window.onscroll = function() {
+      var currentScroll = window.pageYOffset;
+
+      if (currentScroll > threshold && currentScroll > prevScroll) {
+        pageHeader.classList.add("closed");
+      } else {
+        pageHeader.classList.remove("closed");
+      }
+      prevScroll = currentScroll;
+    }
+  </script>
+</body>
+
+</html>
