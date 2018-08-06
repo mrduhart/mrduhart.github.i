@@ -11,6 +11,11 @@ html, body {
   color: #101010;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 #page-wrapper {
   position: relative;
   overflow: hidden;
@@ -93,7 +98,7 @@ html, body {
   font-size: 1.44em;
 
   transform: translate3d(75%, 0, 0);
-  transition: 1s ease transform;
+  transition: 0.8s ease transform;
 }
 
 .page-nav.open a {
@@ -115,6 +120,60 @@ html, body {
   padding: 2.5em;
 }
 
+.note-tags-bar {
+  text-align: left;
+  border-bottom: 2px solid;
+  padding: 1em;
+  width: 90%;
+  margin: 0 auto 1em;
+}
+
+.the-notes {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: start;
+  align-content: space-between;
+
+  width: 90%;
+  margin: 0 auto;
+}
+
+.note-item {
+  width: 100%;
+  text-align: left;
+  padding: 0.5em;
+  margin: 0.5em 0.66%;
+}
+
+.note-item .note-img, .note-item .note-title,
+.note-item .note-intro, .note-item .note-meta {
+  padding: 0;
+  text-align: left;
+  margin: 0.3em 0;
+  font-size: 1em;
+}
+
+.note-item .note-img {
+  width: 100%;
+}
+
+.note-item .note-title {
+  font-size: 1.45em;
+}
+
+.note-item .note-intro {
+  margin: 0.6em 0;
+  font-size: 0.9em;
+  line-height: 1.4;
+}
+
+.note-item .note-meta {
+  font-size: 0.8em;
+}
+
+/* .note-item .note-img, .note-item .note-title,
+.note-item .note-intro, .note-item .note-meta { */
+
 .note {
   display: flex;
   flex-flow: row wrap;
@@ -130,14 +189,19 @@ html, body {
 }
 
 .note-header, .note-body {
-  padding: 1.6em 0 1em;
+  /* padding: 1.6em 0 1em; */
   max-width: 740px;
   margin: auto;
+}
+
+.note-body {
+  padding: 1.6em 0 1em;
 }
 
 .page-body {
   /* background: #b30027; */
   margin-top: 100px;
+  padding: 1em 0;
 }
 
 .note-title {
@@ -155,7 +219,6 @@ html, body {
   width: 100%;
   max-width: 600px;
   margin: 0.67em 0;
-  border: 1px solid #000;
 }
 
 .note-intro {
@@ -193,6 +256,9 @@ h1.note-title {
 
 /* Tablet Styles */
 @media only screen and (min-width: 640px) {
+  .note-item {
+    width: 46.68%;
+  }
 }
 
 /* Desktop Styles */
@@ -244,5 +310,9 @@ h1.note-title {
 
   .page-body {
     margin-top: 80px;
+  }
+
+  .note-item {
+    width: 32%;
   }
 }
