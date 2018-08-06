@@ -1,0 +1,248 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: "Inconsolata", sans-serif;
+  font-size: 22px;
+  color: #101010;
+}
+
+#page-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.page-header, .page-body, .page-footer {
+  width: 100%;
+}
+
+.page-header {
+  height: 100px;
+  background: #101010;
+
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+
+  transition: 0.25s top;
+
+  font-size: 1.64em;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+}
+
+.page-header.closed {
+  top: -100px;
+}
+
+.page-header a {
+  display: inline-block;
+  color: #f2f2f2;
+  text-decoration: none;
+}
+
+#nav-logo {
+  padding: 0.695em;
+  font-size: 1.16em;
+  transition: 1s ease padding-left;
+}
+
+.page-nav {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: start;
+  background: #101010;
+
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 100%;
+  width: 100%;
+
+  transition: 0.3s ease-out transform;
+}
+
+.page-nav.open {
+  transform: translate3d(-100%, 0, 0);
+}
+
+#open-nav {
+  color: #f2f2f2;
+  position: absolute;
+  right: 0;
+  padding: 0.86em 1.2em;
+}
+
+#close-nav {
+  display: block;
+  position: relative;
+  left: 0;
+}
+
+.page-nav a {
+  width: 100%;
+  padding: 1em;
+  font-size: 1.44em;
+
+  transform: translate3d(75%, 0, 0);
+  transition: 1s ease transform;
+}
+
+.page-nav.open a {
+  transform: translate3d(0, 0, 0);
+}
+
+.page-body {
+  text-align: center;
+  background: #f8f8f8;
+}
+
+.page-body p {
+  /* margin: 0.67em 0; */
+  padding: 0 1em;
+}
+
+.page-footer {
+  background: #404040;
+  padding: 2.5em;
+}
+
+.note {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+}
+
+.note > * {
+  flex: 1 100%;
+}
+
+.note-header, .note-body, .note-footer {
+  width: 100%;
+}
+
+.note-header, .note-body {
+  padding: 1.6em 0 1em;
+  max-width: 740px;
+  margin: auto;
+}
+
+.page-body {
+  /* background: #b30027; */
+  margin-top: 100px;
+}
+
+.note-title {
+  margin: 0 0;
+}
+
+.note-meta {
+  font-size: 1.15em;
+  line-height: 1;
+  /* color: #dddddd; */
+  margin: 0.5em 0;
+}
+
+.note-img {
+  width: 100%;
+  max-width: 600px;
+  margin: 0.67em 0;
+  border: 1px solid #000;
+}
+
+.note-intro {
+  margin: 0.5em 0;
+  text-align: justify;
+}
+
+.note-aside {
+  padding: 1em;
+  color: #fff;
+}
+
+.note-nav {
+  background: #008059;
+}
+
+.note-body p {
+  margin: 0 0 0.8em;
+  text-align: left;
+  line-height: 1.3;
+}
+
+h1.note-title {
+  font-size: 2.5em;
+  font-weight: bold;
+  line-height: 1;
+  padding: 0 0.4em;
+  /* color: #fff; */
+  /* margin: 0.5em 0; */
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 639px) {
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 640px) {
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 800px) {
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+
+    height: 80px;
+    padding: 0 1.04em;
+    font-size: 1.18em;
+    line-height: 1;
+  }
+
+  .page-header.closed {
+    top: -80px;
+  }
+
+  #nav-logo {
+    padding: 0.75em 0;
+    font-size: 1.23em;
+  }
+
+  .page-nav {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+
+    position: initial;
+    width: auto;
+  }
+
+  .page-nav.open {
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  #open-nav, #close-nav {
+    display: none;
+  }
+
+  .page-nav a {
+    width: initial;
+    padding: 1.04em 0;
+    margin: 0 1em;
+    font-size: 1em;
+
+    transform: translate3d(0, 0, 0);
+  }
+
+  .page-body {
+    margin-top: 80px;
+  }
+}
