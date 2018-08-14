@@ -15,16 +15,14 @@
 <body>
   <div id="page-wrapper">
     <header id="page-header" class="page-header">
-      <a id="open-nav">
-        <i class="fa fa-bars"></i>
-      </a>
-
       <a id="nav-logo" href="index.html"><i class="logo">I, Data</i></a>
 
+      <a id="nav-control">
+        <i id="open-nav" class="nav-icon fa fa-bars open"></i>
+        <i id="close-nav" class="nav-icon fa fa-times"></i>
+      </a>
+
       <nav id="page-nav" class="page-nav">
-        <a id="close-nav">
-          <i class="fa fa-times"></i>
-        </a>
         <a href="index.html">Home</a>
         <a href="notes.html">Notes</a>
         <a href="about.html">About</a>
@@ -94,12 +92,25 @@
   </div>
   <script>
     // Responsive menu
-    document.getElementById("open-nav").onclick = function(){
-      document.getElementById("page-nav").classList.add("open");
-    };
+    var navCtrl = document.getElementById("nav-control");
+    var openNav = document.getElementById("open-nav");
+    var closeNav = document.getElementById("close-nav");
+    var pageNav = document.getElementById("page-nav");
 
-    document.getElementById("close-nav").onclick = function(){
-      document.getElementById("page-nav").classList.remove("open");
+    navCtrl.onclick = function(){
+      if (pageNav.classList.contains("open")) {
+        pageNav.classList.remove("open");
+        navCtrl.classList.remove("open");
+
+        pageNav.classList.remove("open");
+        closeNav.classList.remove("open");
+        openNav.classList.add("open");
+      }
+      else {
+        pageNav.classList.add("open");
+        closeNav.classList.add("open");
+        openNav.classList.remove("open");
+      }
     };
 
     // When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar

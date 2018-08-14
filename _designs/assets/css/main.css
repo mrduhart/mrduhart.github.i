@@ -66,7 +66,7 @@ a {
   background: #101010;
 
   position: fixed;
-  top: 0;
+  top: 100px;
   bottom: 0;
   left: 100%;
   width: 100%;
@@ -78,17 +78,37 @@ a {
   transform: translate3d(-100%, 0, 0);
 }
 
-#open-nav {
-  color: #f2f2f2;
+#nav-control {
   position: absolute;
-  right: 0;
   padding: 0.86em 1.2em;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  color: #f2f2f2;
+}
+
+#nav-control .nav-icon {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+#nav-control .nav-icon.open {
+  transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  opacity: 1;
+}
+
+#open-nav {
+  transform: translate(-50%, -50%) rotate(180deg) scale(0.5);
+  opacity: 0;
 }
 
 #close-nav {
-  display: block;
-  position: relative;
-  left: 0;
+  font-size: 1.2em;
+  transform: translate(-50%, -50%) rotate(-180deg) scale(0.5);
+  opacity: 0;
 }
 
 #page-down {
@@ -182,14 +202,16 @@ a {
     justify-content: center;
 
     position: initial;
-    width: 100%;
+    width: auto;
+    transform: translate3d(0, 0, 0);
+    transition: none;
   }
 
   .page-nav.open {
-    /* transform: translate3d(-100%, 0, 0); */
+    transform: translate3d(0, 0, 0);
   }
 
-  #open-nav, #close-nav {
+  #nav-control {
     display: none;
   }
 
@@ -208,7 +230,7 @@ a {
     font-size: 1.5em;
     color: #f2f2f2;
 
-    animation: up-down 0.6s infinite alternate;
+    /* animation: up-down 0.6s infinite alternate; */
   }
 
   .page-nav a {
