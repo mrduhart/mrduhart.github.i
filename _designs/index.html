@@ -15,7 +15,7 @@
 <body>
   <div id="page-wrapper">
     <header id="page-header" class="page-header">
-      <a id="nav-logo" href="index.html"><i class="logo">I, Data</i></a>
+      <a id="nav-logo" href="index.html"><span class="logo">I, Data</span></a>
 
       <a id="nav-control">
         <i id="open-nav" class="nav-icon fa fa-bars open"></i>
@@ -28,7 +28,7 @@
         <a href="about.html">About</a>
       </nav>
 
-      <span id="page-down" class="page-down"><i class="fas fa-angle-down"></i></span>
+      <span id="page-down" class="page-down"><i class="fas fa-chevron-down"></i></span>
     </header>
 
     <main id="page-body" class="page-body">
@@ -84,16 +84,16 @@
     var threshold = 1.0 * pageHeader.offsetHeight;
     var prevScroll = window.pageYOffset;
 
-    window.onscroll = function() {
-      var currentScroll = window.pageYOffset;
+    // window.onscroll = function() {
+    //   var currentScroll = window.pageYOffset;
 
-      if (currentScroll > threshold && currentScroll > prevScroll) {
-        pageHeader.classList.add("closed");
-      } else {
-        pageHeader.classList.remove("closed");
-      }
-      prevScroll = currentScroll;
-    }
+    //   if (currentScroll > threshold && currentScroll > prevScroll) {
+    //     pageHeader.classList.add("closed");
+    //   } else {
+    //     pageHeader.classList.remove("closed");
+    //   }
+    //   prevScroll = currentScroll;
+    // }
   </script>
 </body>
 

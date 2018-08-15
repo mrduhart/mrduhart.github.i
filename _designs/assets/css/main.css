@@ -1,3 +1,13 @@
+/* Palette
+Black: 141414
+Gray: 2B2B2B
+White: ECECEA
+Red: B30027
+Blue: 6DBDD6
+Other white: FAFAFA
+Other gray: AAAAAA
+*/
+
 * {
   margin: 0;
   padding: 0;
@@ -6,9 +16,10 @@
 
 html, body {
   height: 100%;
+  background: #f4f4f4;
   font-family: "Inconsolata", sans-serif;
   font-size: 22px;
-  color: #101010;
+  color: #2B2B2B;
 }
 
 a {
@@ -30,7 +41,7 @@ a {
 
 .page-header {
   height: 100px;
-  background: #101010;
+  background: #fafafa;
 
   position: fixed;
   top: 0;
@@ -40,8 +51,10 @@ a {
 
   font-size: 1.64em;
   line-height: 1;
-  color: #fff;
+  color: #141414;
   text-align: center;
+
+  border-bottom: 1px #aaaaaa solid;
 }
 
 .page-header.closed {
@@ -50,7 +63,15 @@ a {
 
 .page-header a {
   display: inline-block;
-  color: #f2f2f2;
+  color: #141414;
+}
+
+#nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 840px;
+  margin: auto;
 }
 
 #nav-logo {
@@ -63,7 +84,7 @@ a {
   display: flex;
   flex-flow: column wrap;
   justify-content: start;
-  background: #101010;
+  background: #f4f4f4;
 
   position: fixed;
   top: 100px;
@@ -84,7 +105,7 @@ a {
   top: 0;
   right: 0;
   bottom: 0;
-  color: #f2f2f2;
+  color: #141414;
 }
 
 #nav-control .nav-icon {
@@ -130,7 +151,6 @@ a {
 
 .page-body {
   text-align: center;
-  background: #f8f8f8;
   margin-top: 100px;
 }
 
@@ -140,13 +160,18 @@ a {
 }
 
 .page-footer {
-  background: #404040;
+  background: #2b2b2b;
   padding: 2.5em;
+  height: 300px;
 }
 
+/* .home-intro {
+}
+
+.home-contents {
+} */
+
 .home-intro, .home-contents {
-  background: #b30027;
-  color: #ffffff;
   font-size: 1.18em;
   line-height: 1.35;
   padding: 1.5em;
@@ -162,10 +187,6 @@ a {
 .home-img img {
   display: block;
   width: 100%;
-}
-
-/* Mobile Styles */
-@media only screen and (max-width: 639px) {
 }
 
 /* Tablet Styles */
@@ -203,6 +224,7 @@ a {
 
     position: initial;
     width: auto;
+    background: #fafafa;
     transform: translate3d(0, 0, 0);
     transition: none;
   }
@@ -228,7 +250,7 @@ a {
     padding: 0.5em;
 
     font-size: 1.5em;
-    color: #f2f2f2;
+    /* color: #ECECEA; */
 
     /* animation: up-down 0.6s infinite alternate; */
   }
