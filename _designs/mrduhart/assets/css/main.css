@@ -1,0 +1,210 @@
+/* Palette
+Black: 141414
+Gray: 2B2B2B
+White: ECECEA
+Red: B30027
+Blue: 6DBDD6
+Other white: FAFAFA
+Other gray: AAAAAA
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-size: 2.0em;
+}
+
+html, body {
+  height: 100%;
+  background: #fafafa;
+  font-family: "Montserrat", sans-serif;
+  color: #2B2B2B;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#page-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.page-header, .page-body, .page-footer {
+  width: 100%;
+}
+
+.dark {
+  background: #000000;
+  color: #fafafa;
+}
+
+.light {
+  background: #fafafa;
+  color: #000000;
+}
+
+.page-header {
+  position: relative;
+  top: 0;
+  z-index: 1000;
+
+  padding: 1em;
+  font-size: 1.4rem;
+  text-align: center;
+
+  /*color: #141414;
+  transition: 0.25s top;
+  border-bottom: 1px #aaaaaa solid; */
+}
+
+.page-header.closed {
+  /* top: -100px; */
+}
+
+.page-header a {
+  /* display: inline-block;
+  color: #141414; */
+}
+
+.page-nav {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 840px;
+  margin: auto;
+}
+
+.section {
+  width: 100%;
+  min-height: 85vh;
+  padding: 2em 1em;
+  /* overflow: auto; */
+
+  display: flex;
+  align-items: center;
+}
+
+.content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: auto;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#home {
+  text-align: center;
+}
+
+.span-hide {
+  display: none;
+}
+
+h1, h2 {
+  margin: 0.5em 0;
+}
+
+h1 {
+  font-weight: 400;
+}
+
+.content h1 {
+  font-size: 3.2rem;
+  text-align: center;
+}
+
+#home h1 {
+  font-size: 5.6rem;
+}
+
+#home h2 {
+  font-size: 2.0rem;
+  font-weight: 200;
+}
+
+#me {
+  display: inline-block;
+}
+
+p#intro {
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 1.5;
+  margin: 2em 0;
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 640px) {
+  .page-header {
+    font-size: 1.8rem;
+  }
+
+  #home h1 {
+    font-size: 6.4rem;
+  }
+
+  #home h2 {
+    font-size: 2.6rem;
+  }
+
+  p#intro {
+    font-size: 2.2rem;
+  }
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 800px) {
+  .section {
+    padding: 3.6em;
+  }
+
+  #home {
+    text-align: left;
+  }
+
+  /* #home .content::after {
+    content: "";
+    display: table;
+    clear: both;
+  } */
+
+  #home .content > * {
+    width: 65%;
+    float: right;
+  }
+
+  #home #me {
+    width: 30%;
+    float: left;
+  }
+
+  .span-hide {
+    display: initial;
+  }
+
+  #home h1 {
+    margin-bottom: 0.2em;
+    text-align: left;
+  }
+
+  #home h2 {
+    margin: 0;
+  }
+}
