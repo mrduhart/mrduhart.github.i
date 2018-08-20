@@ -6,3 +6,7 @@
 # Folders
 _site/
 My_Fontspring_Fonts/
+
+# Temp
+
+templates/
