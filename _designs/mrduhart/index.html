@@ -12,14 +12,14 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 </head>
 
-<body>
+<body class="dark">
   <div id="page-wrapper">
     <header id="page-header" class="page-header dark">
       <nav id="page-nav" class="page-nav">
-        <a href="#home">HOME</a>
-        <a href="#about">ABOUT</a>
-        <a href="#projects">PROJECTS</a>
-        <a href="#blogs">BLOG</a>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#blogs">Blog</a>
       </nav>
     </header>
 
@@ -28,7 +28,7 @@
         <article class="content">
           <header>
             <h1><span class="span-hide">I'm </span>Bronson Duhart</h1>
-            <h2>Engineer and creator</h2>
+            <h2>Engineer & Creator</h2>
           </header>
 
           <span id="me"><img src="assets/imgs/man_smoke.jpg" alt="Mr. Duhart"></span>
@@ -60,52 +60,25 @@
         </article>
       </section>
     </main>
-    <footer class="section page-footer dark">
+    <footer id="page-footer" class="section page-footer dark">
       <p>Find me</p>
     </footer>
   </div>
   <script>
-    // Responsive menu
-    var navCtrl = document.getElementById("nav-control");
-    var openNav = document.getElementById("open-nav");
-    var closeNav = document.getElementById("close-nav");
-    var pageNav = document.getElementById("page-nav");
-
-    navCtrl.onclick = function(){
-      if (pageNav.classList.contains("open")) {
-        pageNav.classList.remove("open");
-        navCtrl.classList.remove("open");
-
-        pageNav.classList.remove("open");
-        closeNav.classList.remove("open");
-        openNav.classList.add("open");
-      }
-      else {
-        pageNav.classList.add("open");
-        closeNav.classList.add("open");
-        openNav.classList.remove("open");
-      }
-    };
-
-    // When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar
+    // When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar.
     var pageHeader = document.getElementById("page-header");
-    var noteHeader = document.getElementById("note-header");
-    // var threshold =
-    //   0.9 * (noteHeader.getBoundingClientRect().bottom
-    //           - pageHeader.getBoundingClientRect().bottom);
-    var threshold = 1.0 * pageHeader.offsetHeight;
+    var threshold = 2.0 * pageHeader.offsetHeight;
     var prevScroll = window.pageYOffset;
 
-    // window.onscroll = function() {
-    //   var currentScroll = window.pageYOffset;
-
-    //   if (currentScroll > threshold && currentScroll > prevScroll) {
-    //     pageHeader.classList.add("closed");
-    //   } else {
-    //     pageHeader.classList.remove("closed");
-    //   }
-    //   prevScroll = currentScroll;
-    // }
+    window.onscroll = function() {
+      var currentScroll = window.pageYOffset;
+      if (currentScroll > threshold && currentScroll > prevScroll) {
+        pageHeader.classList.add("closed");
+      } else if (pageHeader.classList.contains("closed")) {
+        pageHeader.classList.remove("closed");
+      }
+      prevScroll = currentScroll;
+    }
   </script>
 </body>
 

@@ -42,7 +42,7 @@ a {
   left: 0;
 }
 
-.page-header, .page-body, .page-footer {
+#page-header, #page-body, #page-footer {
   width: 100%;
 }
 
@@ -56,45 +56,45 @@ a {
   color: #000000;
 }
 
-.page-header {
-  position: relative;
+#page-header {
+  position: fixed;
   top: 0;
   z-index: 1000;
 
   padding: 1em;
   font-size: 1.4rem;
   text-align: center;
+  line-height: 2;
 
-  /*color: #141414;
-  transition: 0.25s top;
-  border-bottom: 1px #aaaaaa solid; */
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.35s ease-out;
 }
 
-.page-header.closed {
-  /* top: -100px; */
+#page-body {
+  /* #page-header has a total height of 4em (2em of padding and 2em of line-height */
+  margin-top: calc(4 * 1.4rem)
 }
 
-.page-header a {
-  /* display: inline-block;
-  color: #141414; */
+#page-header.closed {
+  transform: translate3d(0, -100%, 0);
+  transition: transform 0.2s ease-in;
 }
 
-.page-nav {
+#page-nav {
   display: flex;
   justify-content: space-around;
   width: 100%;
   max-width: 840px;
   margin: auto;
+  text-transform: uppercase;
 }
 
 .section {
+  display: flex;
+  align-items: center;
   width: 100%;
   min-height: 85vh;
   padding: 2em 1em;
-  /* overflow: auto; */
-
-  display: flex;
-  align-items: center;
 }
 
 .content {
@@ -152,8 +152,13 @@ p#intro {
 
 /* Tablet Styles */
 @media only screen and (min-width: 640px) {
-  .page-header {
+  #page-header {
     font-size: 1.8rem;
+  }
+
+  #page-body {
+    /* #page-header has a total height of 4em (2em of padding and 2em of line-height */
+    margin-top: calc(4 * 1.8rem)
   }
 
   #home h1 {
