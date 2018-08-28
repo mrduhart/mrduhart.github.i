@@ -102,6 +102,7 @@ a {
   max-width: 1200px;
   margin: 0 auto;
   overflow: auto;
+  font-size: 2.2rem;
 }
 
 img {
@@ -126,7 +127,12 @@ h1 {
 }
 
 .content h1 {
-  font-size: 3.2rem;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.content h2 {
+  font-size: 1.2em;
   text-align: center;
 }
 
@@ -150,6 +156,43 @@ p#intro {
   margin: 2em 0;
 }
 
+.skills {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.skills h2 {
+  text-align: center;
+}
+
+.skill {
+  overflow: auto;
+}
+
+.skill p {
+  float: left;
+}
+
+.skill-level {
+  display: flex;
+  justify-content: space-between;
+  float: right;
+  width: 40%;
+  padding: 0.5em 0;
+}
+
+.dot {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  /* margin: 0 auto; */
+}
+
+.dot.light{
+  background: #808080;
+}
+
 /* Tablet Styles */
 @media only screen and (min-width: 640px) {
   #page-header {
@@ -171,6 +214,10 @@ p#intro {
 
   p#intro {
     font-size: 2.2rem;
+  }
+
+  .skills {
+    width: 40%;
   }
 }
 
