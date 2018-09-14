@@ -1,7 +1,7 @@
 # File types
 *.docx
 *.pdf
-*.png
+# *.png
 *.zip
 
 # Folders
