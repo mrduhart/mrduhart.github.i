@@ -1,1 +1,11 @@
+# File types
+*.docx
+*.pdf
+*.zip
+
+# Folders
 _site/
+_designs/
+
+# Temp
+
