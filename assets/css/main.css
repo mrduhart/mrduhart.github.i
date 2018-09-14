@@ -1,43 +1,315 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
 body {
-    margin: 60px auto;
-    width: 70%;
+  font-size: 2.0em;
 }
-nav ul, footer ul {
-    font-family:'Helvetica', 'Arial', 'Sans-Serif';
-    padding: 0px;
-    list-style: none;
-    font-weight: bold;
+
+html, body {
+  height: 100%;
+  background: #fafafa;
+  font-family: "Montserrat", sans-serif;
+  color: #2B2B2B;
 }
-nav ul li, footer ul li {
-    display: inline;
-    margin-right: 20px;
-}
+
 a {
-    text-decoration: none;
-    color: #999;
+  text-decoration: none;
+  color: inherit;
 }
-a:hover {
-    text-decoration: underline;
+
+#page-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
+
+#page-header, #page-body, #page-footer {
+  width: 100%;
+}
+
+.dark {
+  background: #000000;
+  color: #fafafa;
+}
+
+.light {
+  background: #fafafa;
+  color: #000000;
+}
+
+#page-header {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+
+  padding: 1em;
+  font-size: 1.4rem;
+  text-align: center;
+  line-height: 2;
+
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.35s ease-out;
+}
+
+#page-body {
+  margin-top: calc(4 * 1.4rem)
+}
+
+#page-header.closed {
+  transform: translate3d(0, -100%, 0);
+  transition: transform 0.2s ease-in;
+}
+
+#page-nav {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 840px;
+  margin: auto;
+  text-transform: uppercase;
+}
+
+.section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  min-height: 85vh;
+  padding: 2em 1em;
+}
+
+.section > * {
+  flex: 0 0 100%;
+}
+
+#home .content {
+  max-width: 800px;
+}
+
+.content {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: auto;
+  font-size: 2.2rem;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#home {
+  text-align: center;
+}
+
+.span-hide {
+  display: none;
+}
+
+h1, h2 {
+  margin: 1em 0;
+}
+
+#home h1, #home h2 {
+  margin: 0.5em 0;
+}
+
 h1 {
-    font-size: 3em;
-    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+  font-weight: 400;
 }
+
+h2 {
+  font-weight: 400;
+}
+
 p {
-    font-size: 1.5em;
-    line-height: 1.4em;
-    color: #333;
-}
-footer {
-    border-top: 1px solid #d5d5d5;
-    font-size: .8em;
+  margin: 1em auto;
+  font-weight: 400;
+  line-height: 1.4;
 }
 
-ul.posts {
-    margin: 20px auto 40px;
-    font-size: 1.5em;
+.dark p {
+  font-weight: 200;
 }
 
-ul.posts li {
-    list-style: none;
+.light p {
+  font-weight: 400;
+}
+
+.content h1 {
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.content h2 {
+  font-size: 1.2em;
+  text-align: center;
+}
+
+#home h1 {
+  font-size: 5.6rem;
+}
+
+#home h2 {
+  font-size: 2.2rem;
+  margin-bottom: 2em;
+}
+
+p.intro {
+  margin: 1em 0;
+  line-height: 1.5;
+}
+
+.skills {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  width: 100%;
+  margin: 1.5em auto 0;
+}
+
+.skills > * {
+  flex: 0 0 100%;
+}
+
+.skills h2 {
+  text-align: center;
+}
+
+.skill {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6em;
+}
+
+.skill p {
+  flex: 0 0 45%;
+  margin: 0;
+}
+
+.skill-level {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 0 0 55%;
+}
+
+.dot {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.dot.light{
+  background: #848484;
+}
+
+.gallery {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gallery .project {
+  flex: 0 0 100%;
+  padding: 0.5em 0;
+  font-size: 0.8em;
+}
+
+.gallery .project * {
+  text-align: left;
+}
+
+#page-footer {
+  min-height: initial;
+  font-size: 0.7em;
+}
+
+.contact {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.contact h1 {
+  margin-right: 1em;
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-item {
+  width: 1.5em;
+  height: 2em;
+  margin-right: 0.5em;
+  font-size: 2em;
+  line-height: 2em;
+  text-align: center;
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 640px) {
+  #page-header {
+    font-size: 1.8rem;
+  }
+
+  #page-body {
+    /* #page-header has a total height of 4em (2em of padding and 2em of line-height */
+    margin-top: calc(4 * 1.8rem)
+  }
+
+  #home h1 {
+    font-size: 6.4rem;
+  }
+
+  #home h2 {
+    font-size: 2.8rem;
+  }
+
+  .skill {
+    flex: 0 0 45%;
+    padding: 1em;
+  }
+
+  .gallery .project {
+    flex: 0 0 45%;
+    margin: 1em 0;
+    padding: 0.5em;
+  }
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 800px) {
+  .section {
+    padding: 3.6em;
+  }
+
+  #home, #home h1, #home h2 {
+    text-align: left;
+  }
+
+  #home h1 {
+    margin-bottom: 0.2em;
+  }
+
+  .span-hide {
+    display: initial;
+  }
 }
