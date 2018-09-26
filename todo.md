@@ -1,6 +1,7 @@
 # Site design
 
-- [ ] Add delay to topbar in mobile styles.
-- [ ] Add photo.
-- [ ] Add timeline layout to project gallery.
-- [ ] Add project details lightbox view.
+- [ ] Delay to topbar in mobile styles.
+- [ ] Photo.
+- [ ] Timeline layout to project gallery.
+- [ ] Project details lightbox view.
+- [ ] Contact form.
