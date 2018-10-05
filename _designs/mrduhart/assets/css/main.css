@@ -132,6 +132,10 @@ h2 {
   font-weight: 400;
 }
 
+h3 {
+  font-weight: 400;
+}
+
 p {
   margin: 1em auto;
   font-weight: 400;
@@ -152,6 +156,11 @@ p {
 }
 
 .content h2 {
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.content h3 {
   font-size: 1.2em;
   text-align: center;
 }
@@ -241,6 +250,20 @@ p.intro {
 
 .gallery .project-wrapper {
   flex: 0 0 100%;
+}
+
+.gallery .timeline-year {
+  width: 92.5%;
+  font-size: 0.8em;
+  text-align: right;
+}
+
+.gallery .timeline-year h2 {
+  display: inline-block;
+  margin: 0.8em 0;
+  font-weight: 200;
+  letter-spacing: 0.1em;
+  transform: translate3d(50%, 0, 0);
 }
 
 .gallery .timeline-wrapper {
@@ -411,6 +434,16 @@ p.copyright {
     /* margin: 0 0 2.4em; */
   }
 
+  .gallery .timeline-year {
+    width: 100%;
+    text-align: center;
+  }
+
+  .gallery .timeline-year h2 {
+    display: block;
+    transform: none;
+  }
+
   .gallery .project-wrapper {
     flex: 0 0 100%;
     /* flex: 0 0 45%;
@@ -425,14 +458,14 @@ p.copyright {
     padding: 0.5em 5em;
   }
 
-  .gallery .project-wrapper:nth-child(odd) .timeline-wrapper {
+  .gallery .project-wrapper:nth-of-type(odd) .timeline-wrapper {
     margin-right: auto;
     padding-left: 0;
     border-left: none;
     border-right: 1px solid;
   }
 
-  .gallery .project-wrapper:nth-child(even) .timeline-wrapper {
+  .gallery .project-wrapper:nth-of-type(even) .timeline-wrapper {
     width: calc(50% + 1px);
     margin-left: auto;
     padding-right: 0;
@@ -440,16 +473,16 @@ p.copyright {
     border-right: none;
   }
 
-  .gallery .project-wrapper:nth-child(even) .project * {
+  .gallery .project-wrapper:nth-of-type(even) .project * {
     text-align: right;
   }
 
-  .gallery .project-wrapper:nth-child(odd) .project-icon {
+  .gallery .project-wrapper:nth-of-type(odd) .project-icon {
     right: 0;
     transform: translate3d(50%, -50%, 0);
   }
 
-  .gallery .project-wrapper:nth-child(even) .project-icon {
+  .gallery .project-wrapper:nth-of-type(even) .project-icon {
     left: 0;
     transform: translate3d(-50%, -50%, 0);
   }
