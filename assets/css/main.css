@@ -64,11 +64,6 @@ a {
   margin-top: calc(4 * 1.4rem)
 }
 
-#page-header.closed {
-  transform: translate3d(0, -100%, 0);
-  transition: transform 0.2s ease-in;
-}
-
 #page-nav {
   display: flex;
   justify-content: space-around;
@@ -268,6 +263,11 @@ p.intro {
 @media only screen and (min-width: 640px) {
   #page-header {
     font-size: 1.8rem;
+  }
+
+  #page-header.closed {
+    transform: translate3d(0, -100%, 0);
+    transition: transform 0.2s ease-in;
   }
 
   #page-body {
