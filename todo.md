@@ -5,6 +5,6 @@
 - [ ] Timeline layout to project gallery.
     - [x] Add timeline.
     - [ ] Add project icons.
-    - [ ] Add years.
+    - [x] Add years.
 - [ ] Project details lightbox view.
 - [ ] Contact form.
